@@ -1,0 +1,7 @@
+Classes:
+    -> Produtos
+        -> Animais
+        -> Fruta
+        -> Vegetais
+    -> Pessoa
+    -> Ferramenta???

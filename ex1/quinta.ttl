@@ -1,0 +1,344 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/2024/quinta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/2024/quinta/> .
+
+<http://rpcw.di.uminho.pt/2024/2024/quinta> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#ajudaQuem
+:ajudaQuem rdf:type owl:ObjectProperty ;
+           rdfs:domain :Moradores ;
+           rdfs:range :Moradores .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#alimentar
+:alimentar rdf:type owl:ObjectProperty ;
+           rdfs:domain :Pessoa ;
+           rdfs:range :Animais .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#colhe
+:colhe rdf:type owl:ObjectProperty ;
+       rdfs:domain :Pessoa ;
+       rdfs:range :Produtos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#deQuem
+:deQuem rdf:type owl:ObjectProperty ;
+        rdfs:domain :Trocas ;
+        rdfs:range :Moradores .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#paraQuem
+:paraQuem rdf:type owl:ObjectProperty ;
+          rdfs:domain :Trocas ;
+          rdfs:range :Moradores .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#produz
+:produz rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pessoa ;
+        rdfs:range :Outros .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#queProduto
+:queProduto rdf:type owl:ObjectProperty ;
+            rdfs:domain :Trocas ;
+            rdfs:range :Produtos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#vendeProduto
+:vendeProduto rdf:type owl:ObjectProperty ;
+              rdfs:domain :Moradores ;
+              rdfs:range :Produtos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/ajudaEM
+:ajudaEM rdf:type owl:ObjectProperty ;
+         rdfs:domain :Auxilios ;
+         rdfs:range :Moradores .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/contrata
+:contrata rdf:type owl:ObjectProperty ;
+          rdfs:domain :Moradores ;
+          rdfs:range :Funcionarios .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/maeDe
+:maeDe rdf:type owl:ObjectProperty ;
+       rdfs:domain :Moradores ;
+       rdfs:range :Moradores .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/paiDe
+:paiDe rdf:type owl:ObjectProperty ;
+       rdfs:domain :Moradores ;
+       rdfs:range :Moradores .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/trabalhaEm
+:trabalhaEm rdf:type owl:ObjectProperty ;
+            rdfs:domain :Pessoa ;
+            rdfs:range :Produtos .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/localização
+:localização rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/nome_auxilio
+:nome_auxilio rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Auxilios .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/nome_pessoa
+:nome_pessoa rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/preco
+:preco rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Funcionarios .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/produto
+:produto rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Produtos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/tipo_ajuda
+:tipo_ajuda rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Auxilios .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Outros
+:Outros rdf:type owl:Class ;
+        rdfs:subClassOf :Produtos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Trocas
+:Trocas rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Animais
+:Animais rdf:type owl:Class ;
+         rdfs:subClassOf :Produtos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Auxilios
+:Auxilios rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Fruta
+:Fruta rdf:type owl:Class ;
+       rdfs:subClassOf :Produtos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Funcionarios
+:Funcionarios rdf:type owl:Class ;
+              rdfs:subClassOf :Pessoa ;
+              owl:disjointWith :Moradores .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Moradores
+:Moradores rdf:type owl:Class ;
+           rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Produtos
+:Produtos rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta/Vegetais
+:Vegetais rdf:type owl:Class ;
+          rdfs:subClassOf :Produtos .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Alface
+:Alface rdf:type owl:NamedIndividual ,
+                 :Vegetais ;
+        :produto "Alface" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Alface_Maçã
+:Alface_Maçã rdf:type owl:NamedIndividual ,
+                      :Trocas ;
+             :deQuem :Sr.Carlos ;
+             :paraQuem :Sr.João ;
+             :queProduto :Alface ,
+                         :Maçã .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Ana
+:Ana rdf:type owl:NamedIndividual ,
+              :Moradores ;
+     :ajudaQuem :Sra.Maria ;
+     :localização "São José" ;
+     :nome_pessoa "Ana" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Banana
+:Banana rdf:type owl:NamedIndividual ;
+        :produto "Banana" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Cenouras
+:Cenouras rdf:type owl:NamedIndividual ,
+                   :Vegetais ;
+          :produto "Cenoura" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Func1
+:Func1 rdf:type owl:NamedIndividual ,
+                :Funcionarios ;
+       :trabalhaEm :Banana ,
+                   :Laranja ,
+                   :Maçã ;
+       :nome_pessoa "Func1" ;
+       :preco 5 .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Galinha
+:Galinha rdf:type owl:NamedIndividual ,
+                  :Animais ;
+         :produto "Galinha" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Geleia
+:Geleia rdf:type owl:NamedIndividual ,
+                 :Outros ;
+        :produto "Geleia de Fruta" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Laranja
+:Laranja rdf:type owl:NamedIndividual ;
+         :produto "Laranja" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Maçã
+:Maçã rdf:type owl:NamedIndividual ,
+               :Fruta ;
+      :produto "Maçã" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Pedro
+:Pedro rdf:type owl:NamedIndividual ,
+                :Moradores ;
+       :ajudaQuem :Sr.João ;
+       :nome_pessoa "Pedro" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Porco
+:Porco rdf:type owl:NamedIndividual ;
+       :produto "Porco" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#REx
+:REx rdf:type owl:NamedIndividual ,
+              :Auxilios ;
+     :ajudaEM :Sr.João ;
+     :nome_auxilio "Rex" ;
+     :tipo_ajuda "Protege a propriedade" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Sr.Carlos
+:Sr.Carlos rdf:type owl:NamedIndividual ,
+                    :Moradores ;
+           :colhe :Alface ,
+                  :Cenouras ,
+                  :Tomate ;
+           :localização "São José" ;
+           :nome_pessoa "Sr.Carlos" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Sr.João
+:Sr.João rdf:type owl:NamedIndividual ,
+                  :Moradores ;
+         :alimentar :Galinha ,
+                    :Porco ,
+                    :Vaca ;
+         :colhe :Banana ,
+                :Laranja ,
+                :Maçã ;
+         :vendeProduto :Banana ,
+                       :Galinha ,
+                       :Laranja ,
+                       :Maçã ,
+                       :Porco ,
+                       :Vaca ;
+         :contrata :Func1 ;
+         :paiDe :Ana ,
+                :Pedro ;
+         :localização "São José" ;
+         :nome_pessoa "Sr.João" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Sra.Maria
+:Sra.Maria rdf:type owl:NamedIndividual ,
+                    :Moradores ;
+           :ajudaQuem :Sr.João ;
+           :produz :Geleia ;
+           :vendeProduto :Geleia ;
+           :maeDe :Ana ,
+                  :Pedro ;
+           :nome_pessoa "Sra.Maria" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Tomate
+:Tomate rdf:type owl:NamedIndividual ,
+                 :Vegetais ;
+        :produto "Tomate" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Trator
+:Trator rdf:type owl:NamedIndividual ,
+                 :Auxilios ;
+        :ajudaEM :Sr.João ;
+        :nome_auxilio "Trator" ;
+        :tipo_ajuda "Arar campos e Plantar as sementes" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/quinta#Vaca
+:Vaca rdf:type owl:NamedIndividual ,
+               :Animais ;
+      :produto "Vaca" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Animais
+                :Fruta
+                :Vegetais
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
