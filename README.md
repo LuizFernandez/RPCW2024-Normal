@@ -1,2 +1,2 @@
 # RPCW2024-Normal
-Teste de RPCW2024 (DESISTI)
+Teste de RPCW2024 (DESISTO)
